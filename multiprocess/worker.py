@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# coding: utf8
+
+"""This module defined different workers for multiprocessing"""
+
 from weakref import ref
 from threading import Thread
 from time import sleep
@@ -77,27 +82,3 @@ class SimpleWorker(Thread):
             if self.__stopped or not self.__func():
                 self.__stopped = True
                 break
-
-
-
-if __name__ == '__main__':
-
-    class A(object):
-
-        def foo(self):
-            print(self)
-            print("ARRRRR!!")
-
-        def __del__(self):
-            print("DELETE")
-
-        def __call__(self):
-            print("CALL   !!!!!!")
-
-    a = A()
-    worker = SimpleWorker(a, 2, False)
-    worker.start()
-    worker.kill()
-    sleep(2.5)
-    worker.start()
-    worker.kill()

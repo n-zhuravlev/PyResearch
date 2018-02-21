@@ -1,9 +1,7 @@
-# !/usr/bin/python
-# coding=utf-8
-
+#!/usr/bin/env python3
+# coding: utf8
 
 """This module defined time profiling class"""
-
 
 from sys import stdout
 from time import sleep, time

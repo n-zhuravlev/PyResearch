@@ -1,6 +1,5 @@
-# encoding: utf-8
-# !/usr/bin/python
-
+#!/usr/bin/env python3
+# coding: utf8
 
 """This module define base MetaClass for different singletons MetaClasses"""
 
