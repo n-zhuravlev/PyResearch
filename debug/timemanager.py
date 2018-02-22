@@ -134,17 +134,11 @@ class TimeTracker(object):
 
         self.__time = 0
 
-    time = property()
-    format = property()
-    verbose = property()
-    rounding = property()
-    stream = property()
-
-    @time.getter
+    @property
     def time(self):
         return self.__time
 
-    @format.getter
+    @property
     def format(self):
         return self.__format
 
@@ -154,7 +148,7 @@ class TimeTracker(object):
         self.__time *= (TimeTracker.__FORMATS[self.__format] / TimeTracker.__FORMATS[new_format])
         self.__format = new_format
 
-    @verbose.getter
+    @property
     def verbose(self):
         return self.__verbose
 
@@ -163,7 +157,7 @@ class TimeTracker(object):
         assert isinstance(value, int) and value in (0, 1, 2), "verbose must be a int variable 0, 1 or 2"
         self.__verbose = value
 
-    @rounding.getter
+    @property
     def rounding(self):
         return self.__round
 
@@ -172,7 +166,7 @@ class TimeTracker(object):
         assert isinstance(value, int) and value >= 1, "rounding must be a int variable >= 1"
         self.__round = value
 
-    @stream.getter
+    @property
     def stream(self):
         return str(self.__stream)
 
